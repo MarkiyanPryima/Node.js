@@ -5,12 +5,13 @@ const hostname = '127.0.0.1';
 const logger = require('./logger');
 const mercedes = require('./mercedes');
 const tesla = require('./tesla');
-const file = require('./file');
+const file = require('./file')
 
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
 
-    file();
+    file.readFile();
+    file.writeFile();
 
     const result = logger(req.url, mercedes, tesla);
 

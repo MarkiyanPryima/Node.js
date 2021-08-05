@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-function file () {
+function readFile() {
     const file1 = path.join(__dirname, 'file1.txt');
     const file2 = path.join(__dirname, 'file2.txt');
 
@@ -20,8 +20,11 @@ function file () {
     })
 }
 
-    fs.writeFile ('file3.txt', 'Hello, from file function', (error) => {
-        if(error) return console.error("Can't write the file");
-    } )
+function writeFile() {
+    fs.writeFile('file3.txt', 'Hello, from the writeFile function', (error) => {
+        if (error) return console.error("Can't write the file");
+    })
+}
 
-module.exports = file;
+
+module.exports = {writeFile, readFile};
