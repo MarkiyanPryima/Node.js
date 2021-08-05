@@ -20,4 +20,8 @@ function file () {
     })
 }
 
+    fs.writeFile ('file3.txt', 'Hello, from file function', (error) => {
+        if(error) return console.error("Can't write the file");
+    } )
+
 module.exports = file;
